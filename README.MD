@@ -89,38 +89,19 @@ This separation allows:
 
 ---
 
-## Running the backend locally (Docker)
+## Quick Start
 
-Build and run the backend:
-
-```bash
+```
+Backend:
 docker build -t lob-backend .
 docker run -p 5000:5000 lob-backend
-```
 
-Test that the API is running:
-
-```
-http://localhost:5000/api/health
-```
-
-Expected response:
-```json
-{
-  "status": "healthy",
-  "features": { ... }
-}
-```
-
----
-
-## Frontend (development mode)
-
-```bash
+Frontend:
 cd frontend
 npm install
 npm start
 ```
+
 
 The frontend connects to the backend via HTTP requests.
 
@@ -138,6 +119,9 @@ CMakeLists.txt        Build system
 ```
 
 ---
+
+
+
 
 ## Motivation
 
@@ -160,6 +144,11 @@ The system is fully functional and actively evolving.
 Architecture is stable; models and features continue to improve over time.
 
 ---
+
+## Live Demo
+A public live demo will be deployed soon.
+
+
 
 ## License
 
