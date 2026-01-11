@@ -1,0 +1,361 @@
+.strategy-builder-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+}
+
+/* Reuse RegimeBuilder styles */
+.builder-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(107, 122, 158, 0.06) 0%, transparent 100%);
+  padding: 1rem;
+  margin: -1.5rem -1.5rem 0 -1.5rem;
+}
+
+.builder-title {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+  letter-spacing: -0.015em;
+}
+
+.builder-header-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.header-action-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.header-action-btn:hover {
+  background-color: rgba(91, 141, 239, 0.15);
+  border-color: #5B8DEF;
+  color: #5B8DEF;
+  transform: translateY(-1px);
+}
+
+/* Section Cards */
+.section-card-compact {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  transition: all 0.2s ease;
+  border-left: 3px solid rgba(107, 122, 158, 0.5);
+  background: linear-gradient(135deg, rgba(107, 122, 158, 0.04) 0%, rgba(255, 255, 255, 0.03) 100%);
+}
+
+.section-card-compact:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Section 3 gets accent color */
+.section-card-compact:nth-child(4) {
+  border-left: 3px solid rgba(91, 141, 239, 0.6);
+  background: linear-gradient(135deg, rgba(91, 141, 239, 0.04) 0%, rgba(255, 255, 255, 0.03) 100%);
+}
+
+.section-header-compact {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.section-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: rgba(107, 122, 158, 0.8);
+  color: white;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(107, 122, 158, 0.25);
+}
+
+.section-card-compact:nth-child(4) .section-number {
+  background-color: #5B8DEF;
+  box-shadow: 0 2px 8px rgba(91, 141, 239, 0.3);
+}
+
+.section-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.90);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.section-body-compact {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+/* Form Elements */
+.input-field-compact {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0;
+  padding: 0.5rem 0.625rem;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.95);
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.input-field-compact:focus {
+  outline: none;
+  border-color: #6B7A9E;
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 2px rgba(107, 122, 158, 0.15);
+}
+
+select.input-field-compact {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.625rem center;
+  padding-right: 2rem;
+}
+
+select.input-field-compact option {
+  background-color: #2a3150;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+select.input-field-compact optgroup {
+  background-color: #1e2538;
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 600;
+  font-size: 0.8125rem;
+}
+
+.select-flex {
+  flex: 1;
+  min-width: 0;  /* ADDED: Allow shrinking */
+  max-width: calc(100% - 80px);  /* ADDED: Reserve space for button */
+}
+
+.select-row {
+  display: flex;
+  gap: 0.5rem;  /* CHANGED: from 0.625rem to 0.5rem */
+  align-items: center;
+}
+
+/* Queue */
+.queue-section-compact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.queue-item-compact {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.625rem 0.75rem;
+  background-color: rgba(107, 122, 158, 0.10);
+  border: 1px solid rgba(107, 122, 158, 0.20);
+  border-left: 2px solid rgba(107, 122, 158, 0.6);
+  transition: all 0.2s ease;
+}
+
+.queue-item-compact:hover {
+  background-color: rgba(107, 122, 158, 0.15);
+  border-color: rgba(107, 122, 158, 0.30);
+}
+
+.queue-number-compact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background-color: rgba(107, 122, 158, 0.30);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.queue-name-compact {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.queue-input {
+  width: 75px;
+  text-align: center;
+}
+
+.queue-remove-compact {
+  background: none;
+  border: none;
+  font-size: 1.125rem;
+  cursor: pointer;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.45);
+  transition: all 0.2s ease;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.queue-remove-compact:hover {
+  color: #ff4466;
+  transform: scale(1.2);
+}
+
+/* Simulation Controls */
+.sim-control-row {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.sim-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  min-width: 70px;
+}
+
+.sim-summary-compact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.625rem 0.75rem;
+  background-color: rgba(91, 141, 239, 0.12);
+  border: 1px solid rgba(91, 141, 239, 0.25);
+  border-left: 2px solid #5B8DEF;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #5B8DEF;
+}
+
+/* Buttons */
+.btn-compact {
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background-color: #5B8DEF;
+  color: white;
+  box-shadow: 0 2px 8px rgba(91, 141, 239, 0.25);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #4a7dd9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(91, 141, 239, 0.35);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.90);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.20);
+  transform: translateY(-1px);
+}
+
+.btn-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn-secondary.btn-compact {
+  flex-shrink: 0;  /* ADDED: Prevent button from shrinking */
+  white-space: nowrap;  /* ADDED: Keep text on one line */
+  padding: 0.625rem 0.75rem;  /* ADJUSTED: Slightly less padding */
+}
+/* ============================================
+   SEED INPUT STYLES
+   ============================================ */
+
+.seed-inputs-compact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.seed-row-compact {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.seed-label-compact {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  min-width: 24px;
+}
+
+.seed-input {
+  width: 80px !important;
+  flex: none !important;
+}

@@ -1,0 +1,181 @@
+.orderbook-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: 'Monaco', 'Consolas', monospace;
+}
+
+.orderbook-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.orderbook-header h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.orderbook-stats {
+  display: flex;
+  gap: 1rem;
+}
+
+.orderbook-stats .stat {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.60);
+  font-weight: 500;
+}
+
+.orderbook-placeholder {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orderbook-placeholder p {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.50);
+}
+
+.orderbook-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.orderbook-headers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0.5rem 0.75rem;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.50);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.header-price { text-align: left; }
+.header-size { text-align: center; }
+.header-total { text-align: right; }
+
+.orderbook-side {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.asks-side {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.orderbook-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.8125rem;
+  transition: background-color 0.1s ease;
+}
+
+.orderbook-row:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.row-price {
+  text-align: left;
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+}
+
+.row-size {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.80);
+  position: relative;
+  z-index: 2;
+}
+
+.row-total {
+  text-align: right;
+  color: rgba(255, 255, 255, 0.60);
+  position: relative;
+  z-index: 2;
+}
+
+.size-bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  opacity: 0.15;
+  transition: width 0.3s ease;
+  z-index: 1;
+}
+
+.bid-price {
+  color: #00ff88;
+}
+
+.ask-price {
+  color: #ff4466;
+}
+
+.bid-bar {
+  background-color: #00ff88;
+}
+
+.ask-bar {
+  background-color: #ff4466;
+}
+
+.orderbook-spread {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.04);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.8125rem;
+}
+
+.spread-label {
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.70);
+  letter-spacing: 0.1em;
+}
+
+.spread-value {
+  font-weight: 600;
+  color: #5B8DEF;
+}
+
+/* Scrollbar styling */
+.orderbook-side::-webkit-scrollbar {
+  width: 4px;
+}
+
+.orderbook-side::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.orderbook-side::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.10);
+  border-radius: 2px;
+}
+
+.orderbook-side::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}

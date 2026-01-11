@@ -1,0 +1,157 @@
+.matrix-input-wrapper {
+  margin: 1.5rem 0 0 0;
+}
+
+.matrix-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.90);
+  margin: 0 0 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.matrix-grid {
+  display: grid;
+  grid-template-columns: 60px repeat(6, 80px);
+  gap: 6px;
+  background-color: rgba(0, 0, 0, 0.20);
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  overflow-x: auto;
+}
+
+.matrix-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+}
+
+.matrix-header {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.80);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-family: 'Courier New', monospace;
+}
+
+.matrix-input {
+  width: 100%;
+  height: 38px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 0.875rem;
+  text-align: center;
+  padding: 0 6px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  font-family: 'Courier New', monospace;
+}
+
+.matrix-input:focus {
+  outline: none;
+  border-color: #5B8DEF;
+  background-color: rgba(255, 255, 255, 0.10);
+  box-shadow: 0 0 0 2px rgba(91, 141, 239, 0.20);
+}
+
+.matrix-input:hover:not(:focus) {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* ============================================
+   COLOR SCHEMES FOR DIFFERENT MATRICES
+   ============================================ */
+
+/* Alpha Matrix (Orange theme) */
+.matrix-input-wrapper[data-scheme="alpha"] .matrix-input {
+  background-color: rgba(255, 149, 0, 0.08);
+  border-color: rgba(255, 149, 0, 0.20);
+}
+
+.matrix-input-wrapper[data-scheme="alpha"] .matrix-input:focus {
+  border-color: #ff9500;
+  background-color: rgba(255, 149, 0, 0.15);
+  box-shadow: 0 0 0 2px rgba(255, 149, 0, 0.20);
+}
+
+.matrix-input-wrapper[data-scheme="alpha"] .matrix-cell.diagonal .matrix-input {
+  background-color: rgba(255, 149, 0, 0.18);
+  border-color: rgba(255, 149, 0, 0.35);
+  font-weight: 600;
+}
+
+.matrix-input-wrapper[data-scheme="alpha"] .matrix-cell.diagonal .matrix-input:focus {
+  background-color: rgba(255, 149, 0, 0.25);
+  border-color: #ff9500;
+}
+
+/* Beta Matrix (Purple theme) */
+.matrix-input-wrapper[data-scheme="beta"] .matrix-input {
+  background-color: rgba(155, 89, 182, 0.08);
+  border-color: rgba(155, 89, 182, 0.20);
+}
+
+.matrix-input-wrapper[data-scheme="beta"] .matrix-input:focus {
+  border-color: #9b59b6;
+  background-color: rgba(155, 89, 182, 0.15);
+  box-shadow: 0 0 0 2px rgba(155, 89, 182, 0.20);
+}
+
+.matrix-input-wrapper[data-scheme="beta"] .matrix-cell.diagonal .matrix-input {
+  background-color: rgba(155, 89, 182, 0.18);
+  border-color: rgba(155, 89, 182, 0.35);
+  font-weight: 600;
+}
+
+.matrix-input-wrapper[data-scheme="beta"] .matrix-cell.diagonal .matrix-input:focus {
+  background-color: rgba(155, 89, 182, 0.25);
+  border-color: #9b59b6;
+}
+
+/* Default scheme (Blue theme) */
+.matrix-cell.diagonal .matrix-input {
+  background-color: rgba(91, 141, 239, 0.18);
+  border-color: rgba(91, 141, 239, 0.35);
+  font-weight: 600;
+}
+
+.matrix-cell.diagonal .matrix-input:focus {
+  background-color: rgba(91, 141, 239, 0.28);
+  border-color: #5B8DEF;
+  box-shadow: 0 0 0 2px rgba(91, 141, 239, 0.25);
+}
+
+/* Remove spinner arrows from number inputs */
+.matrix-input::-webkit-inner-spin-button,
+.matrix-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.matrix-input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Scrollbar for matrix grid */
+.matrix-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.matrix-grid::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.matrix-grid::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+.matrix-grid::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.22);
+}

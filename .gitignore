@@ -1,0 +1,35 @@
+# Build artifacts
+build/
+__pycache__/
+*.pyc
+*.pyo
+*.so
+*.o
+*.a
+*.out
+
+# Python virtual environments
+venv/
+.env/
+
+# Node / frontend
+node_modules/
+dist/
+build/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor junk
+.vscode/
+.idea/
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+
+Test Scripts 2/
