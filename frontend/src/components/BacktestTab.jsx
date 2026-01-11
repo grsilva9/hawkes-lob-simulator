@@ -62,6 +62,18 @@ const BacktestTab = ({ backtestResults, setBacktestResults, marketData, setMarke
 
         {/* Results Panel */}
         <div className="backtest-results-panel">
+          
+          {/* Instruction Panel */}
+          <div className="instruction-box">
+            <h4>🧪 How to run a backtest</h4>
+            <ol>
+              <li>Select a market regime</li>
+              <li>Optionally design a custom trading strategy</li>
+              <li>Add one or more strategies</li>
+              <li>Adjust transaction cost</li>
+              <li>Click <strong>Run Backtest</strong></li>
+            </ol>
+          </div>          
           {!isBuilderVisible && (
             <button 
               className="show-builder-btn"

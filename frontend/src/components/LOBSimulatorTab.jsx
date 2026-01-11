@@ -80,6 +80,16 @@ const LOBSimulatorTab = ({ simulationData, setSimulationData, onClear }) => {
 
         {/* Right: Visualization Area */}
         <main className="visualization-area">
+            <div className="instruction-box">
+            <h4>🧭 How to use Market Simulation</h4>
+            <ol>
+              <li>Optionally design a custom market regime</li>
+              <li>Select a regime and click <strong>Add</strong></li>
+              <li>Adjust time unit or random seed</li>
+              <li>Click <strong>Simulate</strong> to generate data</li>
+            </ol>
+          </div>
+
           {/* Show Panel Button (when hidden) */}
           {!regimeBuilderOpen && (
             <button 
