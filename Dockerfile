@@ -20,4 +20,6 @@ RUN rm -rf build \
     && make install
 
 EXPOSE 5000
-CMD ["gunicorn", "-b", "0.0.0.0:5000", "python.lob_simulator.api:app"]
+CMD gunicorn -b 0.0.0.0:$PORT python.lob_simulator.api:app
+
+
