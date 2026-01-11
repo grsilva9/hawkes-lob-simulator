@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './StrategyDesignerModal.css';
 
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
+
 // Available functions from the expression evaluator
 const AVAILABLE_FUNCTIONS = [
   { name: 'SMA', syntax: 'SMA(var, window)', description: 'Simple Moving Average', example: 'SMA(mid, 50)' },
@@ -66,7 +69,7 @@ const StrategyDesignerModal = ({ isOpen, onClose, onSave, templates = [] }) => {
     if (!selectedTemplate) return;
     
     try {
-      const response = await fetch(`http://localhost:5000/api/strategy_templates/${selectedTemplate}`);
+      const response = await fetch(`${API_BASE_URL}/api/strategy_templates/${selectedTemplate}`);
       const data = await response.json();
       
       if (data.success) {
@@ -143,7 +146,7 @@ const StrategyDesignerModal = ({ isOpen, onClose, onSave, templates = [] }) => {
     }
     
     try {
-      const response = await fetch('http://localhost:5000/api/validate_expression', {
+      const response = await fetch(`${API_BASE_URL}/api/validate_expression`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ expression })

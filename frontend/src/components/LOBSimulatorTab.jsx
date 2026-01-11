@@ -4,6 +4,8 @@ import CandlestickChart from './CandlestickChart';
 import OrderBookDisplay from './OrderBookDisplay';
 import './LOBSimulatorTab.css';
 
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
 const LOBSimulatorTab = ({ simulationData, setSimulationData, onClear }) => {
   const [regimeBuilderOpen, setRegimeBuilderOpen] = useState(true);
   const [isSimulating, setIsSimulating] = useState(false);
@@ -13,7 +15,7 @@ const LOBSimulatorTab = ({ simulationData, setSimulationData, onClear }) => {
     setIsSimulating(true);
 
     try {
-      const response = await fetch('http://localhost:5000/simulate_regimes', {
+      const response = await fetch(`${API_BASE_URL}/simulate_regimes`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ regimes: regimeConfigs })

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './StrategyBuilder.css';
 import StrategyDesignerModal from './StrategyDesignerModal';
 
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
 const StrategyBuilder = ({ onRunBacktest, isSimulating, onTogglePanel, onClear }) => {
   // Modal state
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -101,7 +103,7 @@ const StrategyBuilder = ({ onRunBacktest, isSimulating, onTogglePanel, onClear }
 
   const loadTemplates = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/strategy_templates?summary=true');
+      const response = await fetch(`${API_BASE_URL}/api/strategy_templates?summary=true`);
       const data = await response.json();
       if (data.success) {
         setTemplates(data.templates);
@@ -209,7 +211,7 @@ const StrategyBuilder = ({ onRunBacktest, isSimulating, onTogglePanel, onClear }
 
   const fetchAndAddTemplate = async (templateId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/strategy_templates/${templateId}`);
+      const response = await fetch(`${API_BASE_URL}/api/strategy_templates/${templateId}`);
       const data = await response.json();
       
       if (data.success) {

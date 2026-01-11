@@ -3,6 +3,8 @@ import StrategyBuilder from './StrategyBuilder';
 import BacktestResults from './BacktestResults';
 import './BacktestTab.css';
 
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
 const BacktestTab = ({ backtestResults, setBacktestResults, marketData, setMarketData, onClear }) => {
   const [isBuilderVisible, setIsBuilderVisible] = useState(true);
   const [isSimulating, setIsSimulating] = useState(false);
@@ -11,7 +13,7 @@ const BacktestTab = ({ backtestResults, setBacktestResults, marketData, setMarke
     setIsSimulating(true);
     
     try {
-      const response = await fetch('http://localhost:5000/api/backtest', {
+      const response = await fetch(`${API_BASE_URL}/api/backtest`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
