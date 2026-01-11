@@ -175,15 +175,6 @@ const WelcomeTab = ({ onNavigateToSimulator }) => {
           </p>
         </section>
 
-        {/* CTA */}
-        <section className="cta-section">
-          <button 
-            className="cta-button"
-            onClick={onNavigateToSimulator}
-          >
-            Start Simulating →
-          </button>
-        </section>
 
       </div>
     </div>
