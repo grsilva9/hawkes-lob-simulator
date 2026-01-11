@@ -6,6 +6,10 @@
 
 ---
 
+## Live Demo
+A public live demo will be deployed soon.
+
+---
 ## Overview
 
 This project is a **research-grade simulation and experimentation platform** for market microstructure and algorithmic trading.  
@@ -144,11 +148,6 @@ The system is fully functional and actively evolving.
 Architecture is stable; models and features continue to improve over time.
 
 ---
-
-## Live Demo
-A public live demo will be deployed soon.
-
-
 
 ## License
 
