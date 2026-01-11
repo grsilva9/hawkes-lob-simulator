@@ -5,11 +5,15 @@
 ![Simulator Preview](assets/simulator.png)
 
 ---
-
 ## Live Demo
-A public live demo will be deployed soon.
+
+An interactive live demo of the Hawkes LOB Simulator is available at:  
+👉 https://hawkes-lob-simulator.vercel.app/
+
+Users can explore market regimes, design strategies, and run backtests directly in the browser.
 
 ---
+
 ## Overview
 
 This project is a **research-grade simulation and experimentation platform** for market microstructure and algorithmic trading.  
@@ -95,16 +99,40 @@ This separation allows:
 
 ## Quick Start
 
+The application consists of a backend API and a frontend web interface.
+Run each in a separate terminal.
+
+**Backend (simulation engine + API)**
+
+From the project root:
+
 ```
 Backend:
 docker build -t lob-backend .
 docker run -p 5000:5000 lob-backend
+```
 
+The API will be available at:
+http://localhost:5000
+
+You can test it by visiting:
+http://localhost:5000/api/health
+
+**Frontend (web interface)**
+
+Open a second terminal:
+
+```
 Frontend:
 cd frontend
 npm install
 npm start
 ```
+
+Then open your browser at:
+http://localhost:3000
+
+The frontend will automatically connect to the backend API.
 
 
 The frontend connects to the backend via HTTP requests.
@@ -151,6 +179,6 @@ Architecture is stable; models and features continue to improve over time.
 
 ## License
 
-MIT (or your preferred license)
+MIT
 
 ---
